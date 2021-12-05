@@ -3,39 +3,50 @@ import { continentPage } from '../view/continentInformation.html.js'
 
 
 export async function continentInformation() {
-    const data = await getData();
-    const countries = Object.keys(data)
+    try {
+        const data = await getData();
+        const countries = Object.keys(data)
+        const globalConfirmed = data.Global.All.confirmed;
 
-    const europe = countries.filter(country => data[country].All.continent == 'Europe');
-    const asia = countries.filter(country => data[country].All.continent == 'Asia');
-    const africa = countries.filter(country => data[country].All.continent == 'Africa');
-    const southAmerica = countries.filter(country => data[country].All.continent == 'South America');
-    const northAmerica = countries.filter(country => data[country].All.continent == 'North America');
-    const oceania = countries.filter(country => data[country].All.continent == 'Oceania');
+        const europe = countries.filter(country => data[country].All.continent == 'Europe');
+        const asia = countries.filter(country => data[country].All.continent == 'Asia');
+        const africa = countries.filter(country => data[country].All.continent == 'Africa');
+        const southAmerica = countries.filter(country => data[country].All.continent == 'South America');
+        const northAmerica = countries.filter(country => data[country].All.continent == 'North America');
+        const oceania = countries.filter(country => data[country].All.continent == 'Oceania');
 
 
 
-    const confirmedInEurope = europe.reduce((total, cur) => total + data[cur].All.confirmed, 0)
-    const confirmedInAsia = asia.reduce((total, cur) => total + data[cur].All.confirmed, 0)
-    const confirmedInAfrica = africa.reduce((total, cur) => total + data[cur].All.confirmed, 0)
-    const confirmedInSouthAmerica = southAmerica.reduce((total, cur) => total + data[cur].All.confirmed, 0)
-    const confirmedInNorthAmerica = northAmerica.reduce((total, cur) => total + data[cur].All.confirmed, 0)
-    const confirmedInOceania = oceania.reduce((total, cur) => total + data[cur].All.confirmed, 0)
+        const confirmedInEurope = europe.reduce((total, cur) => total + data[cur].All.confirmed, 0)
+        const confirmedInAsia = asia.reduce((total, cur) => total + data[cur].All.confirmed, 0)
+        const confirmedInAfrica = africa.reduce((total, cur) => total + data[cur].All.confirmed, 0)
+        const confirmedInSouthAmerica = southAmerica.reduce((total, cur) => total + data[cur].All.confirmed, 0)
+        const confirmedInNorthAmerica = northAmerica.reduce((total, cur) => total + data[cur].All.confirmed, 0)
+        const confirmedInOceania = oceania.reduce((total, cur) => total + data[cur].All.confirmed, 0)
 
-    return continentPage(confirmedInEurope, confirmedInAsia, confirmedInAfrica, confirmedInSouthAmerica, confirmedInNorthAmerica, confirmedInOceania);
+        const europeOfWorld = ((confirmedInEurope / globalConfirmed) * 100).toFixed(2);
+        const asiaOfWorld = ((confirmedInAsia / globalConfirmed) * 100).toFixed(2);
+        const africaOfWorld = ((confirmedInAfrica / globalConfirmed) * 100).toFixed(2);
+        const southAmericaOfWorld = ((confirmedInSouthAmerica / globalConfirmed) * 100).toFixed(2);
+        const northAmericaOfWorld = ((confirmedInNorthAmerica / globalConfirmed) * 100).toFixed(2);
+        const oceaniaOfWorld = ((confirmedInOceania / globalConfirmed) * 100).toFixed(2);
+
+        return continentPage(confirmedInEurope, confirmedInAsia, confirmedInAfrica,
+            confirmedInSouthAmerica, confirmedInNorthAmerica, confirmedInOceania,
+            europeOfWorld, asiaOfWorld, africaOfWorld, southAmericaOfWorld, northAmericaOfWorld, oceaniaOfWorld);
+    } catch (error) {
+        console.log(error.message)
+    }
 }
 
 
 export async function getContinentsInfo() {
     const continent = await continentInformation();
-    const button = document.querySelector('.continent-page');
     const moveToContinentPage = document.querySelector('.continent-cases');
 
 
     moveToContinentPage.addEventListener('click', () => {
         document.getElementById('main-corona').innerHTML = continent;
     })
-    button.addEventListener('click', () => {
-        document.getElementById('main-corona').innerHTML = continent;
-    })
+
 }
