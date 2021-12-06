@@ -1,6 +1,6 @@
-import { countriesTable, countrySelectedTable, thisCountryNotFound } from '../view/countriesInformation.html.js'
+import { countriesTable, countrySelectedTable, thisCountryNotFound, loading } from '../view/countriesInformation.html.js'
 import { getData } from './globalInformation.js'
-
+import { INPUT_COUNTRY, SEARCH_BUTTON, MAIN_CORONA } from '../constants.js'
 
 
 export async function fetchCountryByName(countryName) {
@@ -21,27 +21,32 @@ export async function fetchVaccinatedCountry(countryName) {
     } else {
         throw new Error('HTTP ERROR: ' + response.status);
     }
-
 }
-
-
 
 export async function getCountryByName() {
     try {
-        const searchCountry = document.querySelector('.country-search');
+        const searchCountry = document.getElementById(INPUT_COUNTRY);
         const country = toCapitalCase(searchCountry.value);
         const data = await getData();
         const countries = Object.keys(data)
         if (countries.includes(country)) {
-            const countrySelectedData = await fetchCountryByName(country);
-            const countrySelectedVaccineData = await fetchVaccinatedCountry(country)
-            return countrySelectedTable(countrySelectedData, countrySelectedVaccineData);
+            if (country.includes(' ')) {
+                console.log(country)
+                const longCountryName = country.replace(' ', '%20');
+                console.log(longCountryName);
+                const countrySelectedData = await fetchCountryByName(longCountryName);
+                const countrySelectedVaccineData = await fetchVaccinatedCountry(longCountryName)
+                return countrySelectedTable(countrySelectedData, countrySelectedVaccineData);
+
+            } else {
+                const countrySelectedData = await fetchCountryByName(country);
+                const countrySelectedVaccineData = await fetchVaccinatedCountry(country)
+                return countrySelectedTable(countrySelectedData, countrySelectedVaccineData);
+            }
         }
         if (country === '') {
             const countriesData = await fetchCountryByName(country);
             const countrySelectedVaccineData = await fetchVaccinatedCountry(country)
-            console.log(countrySelectedVaccineData);
-
             return countriesTable(countriesData, countrySelectedVaccineData);
         } else {
             return thisCountryNotFound();
@@ -52,20 +57,34 @@ export async function getCountryByName() {
 }
 
 export async function countriesInformation() {
-    const searchCountryButton = document.querySelector('.search-button');
-    const searchCountry = document.querySelector('.country-search');
+    const searchCountryButton = document.getElementById(SEARCH_BUTTON);
+    const searchCountry = document.getElementById(INPUT_COUNTRY);
     searchCountry.addEventListener('keyup', async () => {
+        document.getElementById(MAIN_CORONA).innerHTML = "";
+        document.getElementById(MAIN_CORONA).appendChild(loading());
         const countryTable = await getCountryByName();
-        document.getElementById('main-corona').innerHTML = "";
-        document.getElementById('main-corona').appendChild(countryTable);
+        document.getElementById(MAIN_CORONA).innerHTML = "";
+        document.getElementById(MAIN_CORONA).appendChild(countryTable);
     });
     searchCountryButton.addEventListener('click', async () => {
+        document.getElementById(MAIN_CORONA).innerHTML = "";
+        document.getElementById(MAIN_CORONA).appendChild(loading());
         const countryTable = await getCountryByName();
-        document.getElementById('main-corona').innerHTML = "";
-        document.getElementById('main-corona').appendChild(countryTable);
+        document.getElementById(MAIN_CORONA).innerHTML = "";
+        document.getElementById(MAIN_CORONA).appendChild(countryTable);
+
     });
 }
 
 const toCapitalCase = (country) => {
-    return country.toLowerCase().charAt(0).toUpperCase() + (country.slice(1).toLowerCase())
+    const countryStructure = country.split(' ');
+    if (countryStructure.length === 1) {
+        return countryStructure[0].toLowerCase().charAt(0).toUpperCase() + (countryStructure[0].slice(1).toLowerCase())
+    } else if (countryStructure.length === 2) {
+        const countryOfTwoWord = `${countryStructure[0].toLowerCase().charAt(0).toUpperCase() + (countryStructure[0].slice(1).toLowerCase())} ${countryStructure[1].toLowerCase().charAt(0).toUpperCase() + (countryStructure[1].slice(1).toLowerCase())}`
+        return countryOfTwoWord;
+    } else {
+        const countryOfThreeWord = `${countryStructure[0].toLowerCase().charAt(0).toUpperCase() + (countryStructure[0].slice(1).toLowerCase())} ${countryStructure[1].toLowerCase()} ${countryStructure[2].toLowerCase().charAt(0).toUpperCase() + (countryStructure[2].slice(1).toLowerCase())}`
+        return countryOfThreeWord;
+    }
 }

@@ -41,19 +41,47 @@ export const countriesTable = (countriesData, countrySelectedVaccineData) => {
     countries.forEach(country => {
         const tableRow = document.createElement('tr');
         const countryName = document.createElement('td');
-        countryName.textContent = countriesData[country].All.country;
+        if (countriesData[country].All.country) {
+            countryName.textContent = countriesData[country].All.country;
+        } else {
+            countryName.textContent = country;
+        }
         const population = document.createElement('td');
-        population.textContent = countriesData[country].All.population;
+        if (countriesData[country].All.population) {
+            population.textContent = countriesData[country].All.population;
+        } else {
+            population.textContent = 'Not found';
+        }
         const capitalCity = document.createElement('td');
-        capitalCity.textContent = countriesData[country].All.capital_city;
+        if (countriesData[country].All.capital_city) {
+            capitalCity.textContent = countriesData[country].All.capital_city;
+        } else {
+            capitalCity.textContent = 'Not found';
+        }
         const confirmed = document.createElement('td');
-        confirmed.textContent = countriesData[country].All.confirmed;
+        if (countriesData[country].All.confirmed) {
+            confirmed.textContent = countriesData[country].All.confirmed;
+        } else {
+            confirmed.textContent = 'Not found';
+        }
         const deaths = document.createElement('td');
-        deaths.textContent = countriesData[country].All.deaths;
+        if (countriesData[country].All.deaths) {
+            deaths.textContent = countriesData[country].All.deaths;
+        } else {
+            deaths.textContent = 'Not found'
+        }
         const lifeExpectancy = document.createElement('td');
-        lifeExpectancy.textContent = countriesData[country].All.life_expectancy;
+        if (countriesData[country].All.life_expectancy) {
+            lifeExpectancy.textContent = countriesData[country].All.life_expectancy;
+        } else {
+            lifeExpectancy.textContent = 'Not found'
+        }
         const updated = document.createElement('td');
-        updated.textContent = countriesData[country].All.updated;
+        if (countriesData[country].All.updated) {
+            updated.textContent = countriesData[country].All.updated;
+        } else {
+            updated.textContent = 'Not found';
+        }
 
         tableRow.appendChild(countryName);
         tableRow.appendChild(population);
@@ -131,7 +159,8 @@ export const countrySelectedTable = (countrySelectedData, countrySelectedVaccine
     const vaccinated = document.createElement('td');
     vaccinated.textContent = countrySelectedVaccineData.All.people_vaccinated.toLocaleString('en-US');
     const partiallyVaccinated = document.createElement('td');
-    partiallyVaccinated.textContent = countrySelectedVaccineData.All.people_partially_vaccinated.toLocaleString('en-US');
+    partiallyVaccinated.textContent = (countrySelectedVaccineData.All.people_partially_vaccinated -
+        countrySelectedVaccineData.All.people_vaccinated).toLocaleString('en-US');
 
 
     tableRow.appendChild(countryName);
@@ -162,4 +191,22 @@ export const thisCountryNotFound = (error) => {
     notFoundDiv.appendChild(notFoundError);
 
     return notFoundDiv;
+}
+
+
+
+
+export const loading = () => {
+    const loadingContainer = document.createElement('div');
+    loadingContainer.classList.add('container', 'loading');
+    loadingContainer.id = 'loading-id'
+    const loadingGifLogo = document.createElement('img');
+    loadingGifLogo.classList.add('loading-logo');
+    loadingGifLogo.src = "../public/Gif/loadingGif.gif"
+    const loadingTitle = document.createElement('h1');
+    loadingTitle.textContent = 'Loading...';
+    loadingContainer.appendChild(loadingGifLogo);
+    loadingContainer.appendChild(loadingTitle);
+
+    return loadingContainer;
 }

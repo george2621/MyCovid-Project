@@ -109,7 +109,7 @@ form {
 
 .population , .confirmed , .deaths, .vaccinated {
   border: 1px solid #f8f5f2;
-  margin:20px 60px;
+  margin:40px 60px;
   padding: 10px;
   border-radius: 5px;
   background: #fff;
@@ -120,6 +120,7 @@ form {
 
 .population p, .confirmed p, .deaths p, .vaccinated p {
   font-size: 17px;
+  color: #125FCA;
 }
 
 
@@ -172,6 +173,7 @@ font-weight: bold;
   min-width: 100%;
   border-radius: 5px 5px 0 0 ;
   box-shadow: 0 0 20px rgba(0,0,0,0.15);
+  margin-bottom: 20px;
 }
 
 .table-header{
@@ -223,4 +225,19 @@ background: #fff;
     width: 40px;
     text-align: center;
     padding: 20px;
+  }
+
+  .loading {
+    text-align: center;
+  }
+
+
+  .loading img {
+    height: 80px;
+    width: 80px;
+    margin-bottom: 30px;
+  }
+
+  .loading h1 {
+    color: #0A3847;
   }

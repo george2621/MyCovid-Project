@@ -1,5 +1,7 @@
 import { getData } from './globalInformation.js'
 import { continentPage } from '../view/continentInformation.html.js'
+import { loading } from '../view/countriesInformation.html.js'
+import { MOVE_TO_CONTINENTS_PAGE } from '../constants.js'
 
 
 export async function continentInformation() {
@@ -14,8 +16,6 @@ export async function continentInformation() {
         const southAmerica = countries.filter(country => data[country].All.continent == 'South America');
         const northAmerica = countries.filter(country => data[country].All.continent == 'North America');
         const oceania = countries.filter(country => data[country].All.continent == 'Oceania');
-
-
 
         const confirmedInEurope = europe.reduce((total, cur) => total + data[cur].All.confirmed, 0)
         const confirmedInAsia = asia.reduce((total, cur) => total + data[cur].All.confirmed, 0)
@@ -41,11 +41,11 @@ export async function continentInformation() {
 
 
 export async function getContinentsInfo() {
-    const continent = await continentInformation();
-    const moveToContinentPage = document.querySelector('.continent-cases');
-
-
-    moveToContinentPage.addEventListener('click', () => {
+    const moveToContinentPage = document.getElementById(MOVE_TO_CONTINENTS_PAGE);
+    moveToContinentPage.addEventListener('click', async () => {
+        document.getElementById('main-corona').innerHTML = "";
+        document.getElementById('main-corona').appendChild(loading());
+        const continent = await continentInformation();
         document.getElementById('main-corona').innerHTML = continent;
     })
 
