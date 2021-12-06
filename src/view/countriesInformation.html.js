@@ -203,7 +203,7 @@ export const loading = () => {
     const loadingGifLogo = document.createElement('img');
     loadingGifLogo.classList.add('loading-logo');
     loadingGifLogo.src = "../public/Gif/loadingGif.gif"
-    const loadingTitle = document.createElement('h1');
+    const loadingTitle = document.createElement('h3');
     loadingTitle.textContent = 'Loading...';
     loadingContainer.appendChild(loadingGifLogo);
     loadingContainer.appendChild(loadingTitle);
