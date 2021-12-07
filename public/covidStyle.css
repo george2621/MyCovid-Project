@@ -9,7 +9,9 @@ height: 100%;
   background: #f8f5f2;
   height:calc(100% - 160px );
   overflow: auto;
-  padding-top: 100px;
+  padding-top: 80px;
+  font-family: "Times New Roman", Times, serif;
+
 }
 
 .earth {
@@ -119,7 +121,7 @@ form {
 }
 
 .population p, .confirmed p, .deaths p, .vaccinated p {
-  font-size: 17px;
+  font-size: 20px;
   color: #125FCA;
   font-weight: bold;
   text-decoration: underline;
@@ -141,7 +143,6 @@ form {
 .continent{
   width: 130px;
   height: 100px;
-  /* background: #f86600; */
   border: 2 solid #f86600;
   border-radius: 50%;
 }
@@ -163,10 +164,12 @@ form {
 .continent-info p{
 color: #125FCA;
 font-weight: bold;
+font-size: 22px;
 }
 
 .continent-info span{
   color: #f86600;
+  font-size: 20px;
   }
 
 
@@ -176,6 +179,7 @@ font-weight: bold;
   border-radius: 5px 5px 0 0 ;
   box-shadow: 0 0 20px rgba(0,0,0,0.15);
   margin-bottom: 20px;
+  font-size: 18px;
 }
 
 .table-header{
@@ -209,6 +213,8 @@ background: #fff;
     height: 5rem;
     background: #0A3847;
     color: #fff;
+    font-family: "Times New Roman", Times, serif;
+
   }
   i {
     color: #fff;
@@ -223,8 +229,6 @@ background: #fff;
   .social .fab {
     margin-right: 1rem;
     border-radius: 50%;
-    height: 40px;
-    width: 40px;
     text-align: center;
     padding: 20px;
   }
