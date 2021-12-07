@@ -5,7 +5,7 @@ export const globalPage = (worldPopulation, totalConfirmedCases, totalDeathCases
     <div class='container'>
       <div class ='first-section'>
         <div>
-          <img class='earth' src=''/>
+          <img class='earth' src='public/Gif/earth.gif'/>
         </div>
         <div class="global-div">
           <div class="header-div text-center ">
@@ -49,7 +49,7 @@ export const globalPage = (worldPopulation, totalConfirmedCases, totalDeathCases
 export const createNavbar = () => {
   return `<nav class="navbar navbar-expand-lg navbar-light">
 <div class="container">
-  <a class="my-covid" href="#"><img src="https://george2621.github.io/MyCovid-Project/public/img/icons8-Pastel Glyph-Coronavirus.png">MyCovid</a>
+  <a class="my-covid" href="#"><img src="public/img/icons8-Pastel Glyph-Coronavirus.png">MyCovid</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
