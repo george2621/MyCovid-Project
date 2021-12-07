@@ -6,19 +6,19 @@ The SPA with 3 pages (routes):
 
 
 <img  src='./public/ImagesForReadme/homePage.png' >
----
+<p>&nbsp;</p>
 
 - Continents page that show the Confirmed cases in each continent and how much is a percentage for the world.
 
+<p>&nbsp;</p>
 
 <img  src='./public/ImagesForReadme/continentsPage.png' >
----
 
 - Search page that show many information about all the country in the world, with the ability to search for a specific country. 
 
+<p>&nbsp;</p>
 
 <img  src='./public/ImagesForReadme/searchPage.png' >
----
 
 # Application:
 
@@ -40,3 +40,13 @@ It can be used to build tools and systems that are used for data analysis all th
 
 API base:
 https://covid-api.mmediagroup.fr/v1
+
+## Further Amendments to be made ?
+
+As a result of one week task i have completed the above mentioned task but in future i want to make this app responsive and also add some more features:
+
+1. where user can also open a private chat with each other.
+2. Use graph to show the difference in cases of corona
+3. Add information about the cities in the countries.
+
+Please feel free to send me your feedback . I would love to hear from you . 
