@@ -1,4 +1,4 @@
-# HackMyCovid - simple website for corona statistics in the world - <a href="https://george2621.github.io/MyCovid-Project/covid.html">Demo</a>
+# HackMyCovid - simple website for corona statistics in the world - <a href="">Demo</a>
 
 The SPA with 3 pages (routes):
 
