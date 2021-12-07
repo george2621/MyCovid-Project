@@ -2,19 +2,19 @@
 
 The SPA with 3 pages (routes):
 
-- A Homepage show the global cases (Countries affected, Population, Confirmed cases, Deaths, Vaccinated cases).
+- A Homepage show the global cases (Countries affected, Population, Confirmed cases, Deaths, Vaccinated cases) :
 
 
 <img  src='./public/ImagesForReadme/homePage.png' >
 <p>&nbsp;</p>
 
-- Continents page that show the Confirmed cases in each continent and how much is a percentage for the world.
+- Continents page that show the Confirmed cases in each continent and how much is a percentage for the world :
 
 <p>&nbsp;</p>
 
 <img  src='./public/ImagesForReadme/continentsPage.png' >
 
-- Search page that show many information about all the country in the world, with the ability to search for a specific country. 
+- Search page that show many information about all the country in the world, with the ability to search for a specific country :
 
 <p>&nbsp;</p>
 
@@ -45,7 +45,7 @@ https://covid-api.mmediagroup.fr/v1
 
 As a result of one week task i have completed the above mentioned task but in future i want to make this app responsive and also add some more features:
 
-1. where user can also open a private chat with each other.
+1. Show the increase and decrease (confirmed, deaths, vaccinated) cases from day to day.
 2. Use graph to show the difference in cases of corona
 3. Add information about the cities in the countries.
 
