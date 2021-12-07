@@ -20,7 +20,13 @@ The SPA with 3 pages (routes):
 
 <img  src='./public/ImagesForReadme/searchPage.png' >
 
-# Application:
+<p>&nbsp;</p>
+
+## Getting Started
+
+To get started you can simply clone the repo and open covid.html
+
+## Application:
 
 ES6 + Features
 
@@ -32,7 +38,7 @@ async await with try/catch
 
 Modules export/import
 
-# Covid-19-API
+## Covid-19-API
 
 The API is intended for developers, machines, programs, and other websites to be able to quickly fetch up to date information on the COVID-19 epidemic.
 
