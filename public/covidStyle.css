@@ -7,7 +7,7 @@ height: 100%;
 
 .main-covid {
   background: #f8f5f2;
-  height: 100%;
+  height:calc(100% - 160px );
   overflow: auto;
   padding-top: 100px;
 }
@@ -109,7 +109,7 @@ form {
 
 .population , .confirmed , .deaths, .vaccinated {
   border: 1px solid #f8f5f2;
-  margin:40px 60px;
+  margin:30px 60px;
   padding: 10px;
   border-radius: 5px;
   background: #fff;
@@ -121,6 +121,8 @@ form {
 .population p, .confirmed p, .deaths p, .vaccinated p {
   font-size: 17px;
   color: #125FCA;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 
