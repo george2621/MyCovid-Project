@@ -7,7 +7,7 @@ height: 100%;
 
 .main-covid {
   background: #f8f5f2;
-  height:calc(100% - 160px );
+  height:calc(100% - 150px );
   overflow: auto;
   padding-top: 80px;
   font-family: "Times New Roman", Times, serif;
@@ -15,16 +15,16 @@ height: 100%;
 }
 
 .earth {
-  width: 650px;
-  height: 650px;
+  width: 100%;
+  height: 90%;
 }
 
 .navbar {
   background: #f86600;
-  height: 80px;
   font-family: "Times New Roman", Times, serif;
   font-size: 20px;
   font-weight: bold;
+  height: 70px;
 }
 
 .my-covid {
@@ -52,7 +52,7 @@ height: 100%;
   content: "";
   position: absolute;
   background-color: #fff;
-  height: 3px;
+  height: 2px;
   width: 0;
   left: 0;
   bottom: -1px;
@@ -63,10 +63,7 @@ height: 100%;
   width: 100%;
 }
 
-.first-section{
-  display: flex;
-  justify-content: space-between;
-}
+
 
 .collapse{
   display: flex;
@@ -94,9 +91,7 @@ form {
 
 }
 
-.global-div{
-  width: 100%;
-}
+
 .global{
   font-weight: bold;
   font-size: 70px;
@@ -150,7 +145,6 @@ form {
 .continent-info{
   border: 1px solid #f8f5f2;
   background: #fff;
-  margin:40px 15px;
   box-shadow: 2px 2px 10px 0 hsl(0deg 0% 50% / 40%);
   border-radius: 5px;
   border-top: solid #125FCA 5px;
