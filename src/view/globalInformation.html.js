@@ -3,11 +3,11 @@
 export const globalPage = (worldPopulation, totalConfirmedCases, totalDeathCases, effectedCountries) => {
   return `
     <div class='container'>
-      <div class ='first-section'>
-        <div>
+      <div class ='first-section row'>
+        <div class="col col-md-6 col-sm-12">
           <img class='earth' src='public/Gif/earth.gif'/>
         </div>
-        <div class="global-div">
+        <div class="col col-md-6 col-sm-12">
           <div class="header-div text-center ">
             <h1 class="global">GLOBAL</h1>
             <p class="affected-countries">Affected Countries : ${effectedCountries}<p>
@@ -50,14 +50,14 @@ export const createNavbar = () => {
   return `<nav class="navbar navbar-expand-lg navbar-light">
 <div class="container">
   <a class="my-covid" href="#"><img src="public/img/icons8-Pastel Glyph-Coronavirus.png">MyCovid</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+    aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse" id="navbar">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link text-white mx-3 home " href="#">Home</a>
+        <a class="nav-link text-white mx-3 home" href="#">Home</a>
       </li>
       <li class="nav-item">
         <a id="continent-button" class="nav-link text-white continent-cases" href="#">Continents Cases</a>

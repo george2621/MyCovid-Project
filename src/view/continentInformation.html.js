@@ -5,7 +5,7 @@ export function continentPage(confirmedInEurope, confirmedInAsia, confirmedInAfr
       <div class='container'>
         <div class="continent-div">
           <div class ='row'>
-            <div class='col continent-info text-center'>
+            <div class='col m-3 continent-info text-center'>
               <div class="text-center my-4">
                 <img class="continent" src="public/continentsImg/Europe.png">
               </div>
@@ -13,7 +13,7 @@ export function continentPage(confirmedInEurope, confirmedInAsia, confirmedInAfr
               <p>${confirmedInEurope.toLocaleString('en-US')}</p>
               <span>${europeOfWorld}% of world total case</span>
             </div>
-            <div class='col continent-info text-center'>
+            <div class='col m-3 continent-info text-center'>
               <div class="text-center my-4">
               <img class="continent" src="public/continentsImg/Asia.png">
               </div>
@@ -21,7 +21,7 @@ export function continentPage(confirmedInEurope, confirmedInAsia, confirmedInAfr
               <p>${confirmedInAsia.toLocaleString('en-US')}</p>
               <span>${asiaOfWorld}% of world total case</span>
             </div>
-            <div class='col continent-info text-center'>
+            <div class='col m-3 continent-info text-center'>
               <div class="text-center my-4">
                 <img class="continent" src="public/continentsImg/Africa.png">
               </div>
@@ -31,7 +31,7 @@ export function continentPage(confirmedInEurope, confirmedInAsia, confirmedInAfr
             </div>
           </div>  
           <div class ='row'>
-            <div class='col continent-info text-center'>
+            <div class='col m-3 continent-info text-center'>
               <div class="text-center my-4">
                 <img class="continent" src="public/continentsImg/South-america.png"> 
               </div>  
@@ -39,7 +39,7 @@ export function continentPage(confirmedInEurope, confirmedInAsia, confirmedInAfr
               <p>${confirmedInSouthAmerica.toLocaleString('en-US')}</p>
               <span>${southAmericaOfWorld}% of world total case</span>
             </div>
-            <div class='col continent-info text-center'>
+            <div class='col m-3 continent-info text-center'>
               <div class="text-center my-4">
                 <img class="continent" src="public/continentsImg/North-america.png">
               </div>
@@ -47,7 +47,7 @@ export function continentPage(confirmedInEurope, confirmedInAsia, confirmedInAfr
               <p>${confirmedInNorthAmerica.toLocaleString('en-US')}</p>
               <span>${northAmericaOfWorld}% of world total case</span>
             </div>
-            <div class='col continent-info text-center'>
+            <div class='col m-3 continent-info text-center'>
               <div class="text-center my-4">
                 <img class="continent" src="public/continentsImg/Australia.png">
               </div>  
