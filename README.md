@@ -11,3 +11,23 @@ The SPA with 3 pages (routes):
 - Search page that show many information about all the country in the world, with the ability to search for a specific country. 
 <img  src='./public/ImagesForReadme/searchPage.png' >
 
+# Application:
+
+ES6 + Features
+
+Arrow Functions
+
+Block-Scoped Variables Let and Const
+
+async await with try/catch
+
+Modules export/import
+
+# Covid-19-API
+
+The API is intended for developers, machines, programs, and other websites to be able to quickly fetch up to date information on the COVID-19 epidemic.
+
+It can be used to build tools and systems that are used for data analysis all the way to websites that act as public dashboards and charts.
+
+API base:
+https://covid-api.mmediagroup.fr/v1
