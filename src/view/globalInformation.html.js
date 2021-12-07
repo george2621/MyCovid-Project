@@ -5,7 +5,7 @@ export const globalPage = (worldPopulation, totalConfirmedCases, totalDeathCases
     <div class='container'>
       <div class ='first-section'>
         <div>
-          <img class='earth' src='public/Gif/ezgif.com-gif-maker.gif'/>
+          <img class='earth' src=''/>
         </div>
         <div class="global-div">
           <div class="header-div text-center ">
