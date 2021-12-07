@@ -202,7 +202,7 @@ export const loading = () => {
     loadingContainer.id = 'loading-id'
     const loadingGifLogo = document.createElement('img');
     loadingGifLogo.classList.add('loading-logo');
-    loadingGifLogo.src = "../public/Gif/loadingGif.gif"
+    loadingGifLogo.src = "https://george2621.github.io/MyCovid-Project/public/Gif/loadingGif.gif"
     const loadingTitle = document.createElement('h3');
     loadingTitle.textContent = 'Loading...';
     loadingContainer.appendChild(loadingGifLogo);
