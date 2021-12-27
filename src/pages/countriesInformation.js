@@ -31,9 +31,7 @@ export async function getCountryByName() {
         const countries = Object.keys(data)
         if (countries.includes(country)) {
             if (country.includes(' ')) {
-                console.log(country)
                 const longCountryName = country.replace(' ', '%20');
-                console.log(longCountryName);
                 const countrySelectedData = await fetchCountryByName(longCountryName);
                 const countrySelectedVaccineData = await fetchVaccinatedCountry(longCountryName)
                 return countrySelectedTable(countrySelectedData, countrySelectedVaccineData);

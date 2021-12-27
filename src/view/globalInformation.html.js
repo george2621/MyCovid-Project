@@ -4,10 +4,10 @@ export const globalPage = (worldPopulation, totalConfirmedCases, totalDeathCases
   return `
     <div class='container'>
       <div class ='first-section row'>
-        <div class="col col-md-6 col-sm-12">
+        <div class="col-md-12  col-lg-6">
           <img class='earth' src='public/Gif/earth.gif'/>
         </div>
-        <div class="col col-md-6 col-sm-12">
+        <div class="col-md-12  col-lg-6">
           <div class="header-div text-center ">
             <h1 class="global">GLOBAL</h1>
             <p class="affected-countries">Affected Countries : ${effectedCountries}<p>
@@ -76,13 +76,17 @@ export const createNavbar = () => {
 export const createFooter = () => {
   return `
   <footer class="main-footer">
-    <div class="footer-content container">
-      <p>Copyright &copy; 2021. All Rights Reserved</p>
-      <div class="social">
-        <a href="https://www.facebook.com/george.roumieh"><i class="fab fa-facebook fa-2x"></i></a>
-        <a href="https://www.instagram.com/george_roumieh/"><i class="fab fa-instagram fa-2x"></i></a>
-        <a href="https://www.linkedin.com/in/george-roumieh-6606901bb/"><i class="fab fa-linkedin fa-2x"></i></a>
-      </div>
+     <div class="container">
+      <div class="row">
+          <div class="col-md-8 my-3">
+            <p>Copyright &copy; 2021. All Rights Reserved</p>
+          </div>
+          <div class="social text-end col-md-4 my-3">
+            <a class="m-3" href="https://www.facebook.com/george.roumieh"><i class=" fab fa-facebook fa-2x"></i></a>
+            <a class="m-3" href="https://www.instagram.com/george_roumieh/"><i class=" fab fa-instagram fa-2x"></i></a>
+            <a class="m-3" href="https://www.linkedin.com/in/george-roumieh-6606901bb/"><i class=" fab fa-linkedin fa-2x"></i></a>
+          </div>
+        </div>
     </div>
   </footer>`
 }

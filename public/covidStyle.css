@@ -75,7 +75,7 @@ form {
 }
 
 .country-search{
-  width: 400px;
+  width: 300px;
   padding:2px 10px;
   border-radius: 5px;
   border: solid 1px #fff;
@@ -143,6 +143,7 @@ form {
 }
 
 .continent-info{
+  height: 350px;
   border: 1px solid #f8f5f2;
   background: #fff;
   box-shadow: 2px 2px 10px 0 hsl(0deg 0% 50% / 40%);
@@ -204,29 +205,15 @@ background: #fff;
   }
 
   .main-footer {
-    height: 5rem;
+    height: 100%;
     background: #0A3847;
     color: #fff;
     font-family: "Times New Roman", Times, serif;
-
   }
   i {
     color: #fff;
   }
-  .footer-content {
-    display: flex;
-    justify-content: space-between;
-    height: 5rem;
-    align-items: center;
-    margin-top: auto;
-  }
-  .social .fab {
-    margin-right: 1rem;
-    border-radius: 50%;
-    text-align: center;
-    padding: 20px;
-  }
-
+  
   .loading {
     text-align: center;
   }

@@ -1,6 +1,5 @@
 
 export const countriesTable = (countriesData, countrySelectedVaccineData) => {
-
     const tableDiv = document.createElement('div');
     tableDiv.classList.add('container');
 
@@ -147,17 +146,41 @@ export const countrySelectedTable = (countrySelectedData, countrySelectedVaccine
     const countryName = document.createElement('td');
     countryName.textContent = countrySelectedData.All.country;
     const population = document.createElement('td');
-    population.textContent = countrySelectedData.All.population.toLocaleString('en-US');
+    if (countrySelectedData.All.population) {
+        population.textContent = countrySelectedData.All.population.toLocaleString('en-US');
+    } else {
+        population.textContent = 'not found';
+    }
     const capitalCity = document.createElement('td');
-    capitalCity.textContent = countrySelectedData.All.capital_city;
+    if (countrySelectedData.All.capital_city) {
+        capitalCity.textContent = countrySelectedData.All.capital_city;
+    } else {
+        capitalCity.textContent = 'not found';
+    }
     const confirmed = document.createElement('td');
-    confirmed.textContent = countrySelectedData.All.confirmed.toLocaleString('en-US');
+    if (countrySelectedData.All.confirmed) {
+        confirmed.textContent = countrySelectedData.All.confirmed.toLocaleString('en-US');
+    } else {
+        confirmed.textContent = 'not found';
+    }
     const deaths = document.createElement('td');
-    deaths.textContent = countrySelectedData.All.deaths.toLocaleString('en-US');
+    if (countrySelectedData.All.deaths) {
+        deaths.textContent = countrySelectedData.All.deaths.toLocaleString('en-US');
+    } else {
+        deaths.textContent = 'not found';
+    }
     const lifeExpectancy = document.createElement('td');
-    lifeExpectancy.textContent = countrySelectedData.All.life_expectancy;
+    if (countrySelectedData.All.life_expectancy) {
+        lifeExpectancy.textContent = countrySelectedData.All.life_expectancy;
+    } else {
+        lifeExpectancy.textContent = 'not found';
+    }
     const vaccinated = document.createElement('td');
-    vaccinated.textContent = countrySelectedVaccineData.All.people_vaccinated.toLocaleString('en-US');
+    if (countrySelectedVaccineData.All.people_vaccinated) {
+        vaccinated.textContent = countrySelectedVaccineData.All.people_vaccinated.toLocaleString('en-US');
+    } else {
+        vaccinated.textContent = 'not found';
+    }
     const partiallyVaccinated = document.createElement('td');
     partiallyVaccinated.textContent = (countrySelectedVaccineData.All.people_partially_vaccinated -
         countrySelectedVaccineData.All.people_vaccinated).toLocaleString('en-US');
