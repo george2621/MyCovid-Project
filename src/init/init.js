@@ -1,18 +1,11 @@
-import { getGlobalsInfo } from '../pages/globalInformation.js';
-import { getContinentsInfo } from '../pages/continentInformation.js';
-import { countriesInformation } from '../pages/countriesInformation.js';
-
-
-
-
+import { getGlobalsInfo } from "../pages/globalInformation.js";
+import { getContinentsInfo } from "../pages/continentInformation.js";
+import { countriesInformation } from "../pages/countriesInformation.js";
 
 function main() {
-
-    getGlobalsInfo()
-    getContinentsInfo();
-    countriesInformation();
-
+  getGlobalsInfo();
+  getContinentsInfo();
+  countriesInformation();
 }
 
-window.addEventListener('load', main);
-
+window.addEventListener("load", main);

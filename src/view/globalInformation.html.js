@@ -1,6 +1,9 @@
-
-
-export const globalPage = (worldPopulation, totalConfirmedCases, totalDeathCases, effectedCountries) => {
+export const globalPage = (
+  worldPopulation,
+  totalConfirmedCases,
+  totalDeathCases,
+  effectedCountries,
+) => {
   return `
     <div class='container'>
       <div class ='first-section row'>
@@ -15,36 +18,36 @@ export const globalPage = (worldPopulation, totalConfirmedCases, totalDeathCases
           <div class="population">
             <div class="header-and-icon">
               <h2>World Population</h2> 
-              <img src="public/img/population.png">
+              <img src="public/Img/population.png">
             </div>
             <p>${worldPopulation}</p>
           </div>
           <div class="confirmed">
             <div class="header-and-icon">
               <h2>Total Cases</h2>
-              <img src="public/img/global.png">
+              <img src="public/Img/global.png">
             </div>
             <p>${totalConfirmedCases}</p>
           </div>
           <div class="deaths">
             <div class="header-and-icon">
               <h2>Deaths</h2>
-              <img src="public/img/deaths.png">
+              <img src="public/Img/deaths.png">
             </div>
             <p>${totalDeathCases}</p>
           </div>
           <div class="vaccinated">
             <div class="header-and-icon">
               <h2>Vaccinated</h2>
-              <img src="public/img/vaccine.png">
+              <img src="public/Img/vaccine.png">
             </div>
             <p>${totalDeathCases}</p>
           </div>
         </div>
       </div>
     </div>
-     `
-}
+     `;
+};
 
 export const createNavbar = () => {
   return `<nav class="navbar navbar-expand-lg navbar-light">
@@ -69,9 +72,8 @@ export const createNavbar = () => {
     </form>
   </div>
 </div>
-</nav>`
-
-}
+</nav>`;
+};
 
 export const createFooter = () => {
   return `
@@ -88,10 +90,5 @@ export const createFooter = () => {
           </div>
         </div>
     </div>
-  </footer>`
-}
-
-
-
-
-
+  </footer>`;
+};
